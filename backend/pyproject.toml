@@ -1,0 +1,12 @@
+[project]
+name = "agent-war-room-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "strawberry-graphql[fastapi]>=0.235",
+    "sqlmodel>=0.0.21",
+    "anthropic>=0.40",
+    "python-dotenv>=1.0",
+]
