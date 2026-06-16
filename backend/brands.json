@@ -1,5 +1,5 @@
 {
-  "active": "sportea",
+  "active": "belleza",
   "brands": [
     {
       "id": "belleza",
@@ -88,6 +88,54 @@
           "category": "coffret",
           "price": 47,
           "stock": 13
+        },
+        {
+          "name": "Eau de Parfum « Néroli Blanc » 50ml",
+          "category": "parfum",
+          "price": 129,
+          "stock": 10
+        },
+        {
+          "name": "Eau de Parfum « Bois de Santal » 50ml",
+          "category": "parfum",
+          "price": 148,
+          "stock": 8
+        },
+        {
+          "name": "Coffret Soin Signature",
+          "category": "coffret",
+          "price": 142,
+          "stock": 7
+        },
+        {
+          "name": "Coffret Parfum Miniatures",
+          "category": "coffret",
+          "price": 168,
+          "stock": 5
+        },
+        {
+          "name": "Bougie d'Intérieur « Ambre Doux »",
+          "category": "coffret",
+          "price": 52,
+          "stock": 14
+        },
+        {
+          "name": "Diffuseur de Parfum d'Intérieur",
+          "category": "coffret",
+          "price": 44,
+          "stock": 12
+        },
+        {
+          "name": "Masque Purifiant Argile Rose",
+          "category": "soin",
+          "price": 35,
+          "stock": 17
+        },
+        {
+          "name": "Gel Nettoyant Douceur",
+          "category": "soin",
+          "price": 31,
+          "stock": 19
         }
       ]
     },
@@ -178,6 +226,102 @@
           "category": "fitness",
           "price": 84,
           "stock": 9
+        },
+        {
+          "name": "Chaussures Running CloudStep 42",
+          "category": "chaussures",
+          "price": 119,
+          "stock": 11
+        },
+        {
+          "name": "Chaussures Trail RockGrip 43",
+          "category": "chaussures",
+          "price": 139,
+          "stock": 9
+        },
+        {
+          "name": "Veste Softshell Sommet",
+          "category": "textile",
+          "price": 95,
+          "stock": 12
+        },
+        {
+          "name": "Veste Thermique Ascension",
+          "category": "textile",
+          "price": 82,
+          "stock": 10
+        },
+        {
+          "name": "Legging Thermique Hiver",
+          "category": "textile",
+          "price": 52,
+          "stock": 18
+        },
+        {
+          "name": "Short Training Flex",
+          "category": "textile",
+          "price": 35,
+          "stock": 22
+        },
+        {
+          "name": "Montre Cardio Pulse Lite",
+          "category": "electronique",
+          "price": 179,
+          "stock": 8
+        },
+        {
+          "name": "Ceinture Cardio Connectée",
+          "category": "electronique",
+          "price": 49,
+          "stock": 14
+        },
+        {
+          "name": "Lampe Frontale Trail 250lm",
+          "category": "electronique",
+          "price": 39,
+          "stock": 16
+        },
+        {
+          "name": "Sac à Dos Trail 15L",
+          "category": "accessoire",
+          "price": 59,
+          "stock": 13
+        },
+        {
+          "name": "Casque Vélo Urbain Flux",
+          "category": "accessoire",
+          "price": 69,
+          "stock": 11
+        },
+        {
+          "name": "Gourde Souple 500ml",
+          "category": "accessoire",
+          "price": 21,
+          "stock": 28
+        },
+        {
+          "name": "Tapis Yoga Confort",
+          "category": "fitness",
+          "price": 45,
+          "stock": 20
+        },
+        {
+          "name": "Kit Élastiques Résistance",
+          "category": "fitness",
+          "price": 34,
+          "stock": 24
+        },
+        {
+          "name": "Haltères Hexagonaux 2x8kg",
+          "category": "fitness",
+          "price": 99,
+          "stock": 9
+        },
+        {
+          "name": "Coffret Massage & Récupération Pro",
+          "category": "fitness",
+          "price": 92,
+          "stock": 7
         }
       ]
     }

@@ -7,6 +7,7 @@ from sqlmodel import Session, select
 
 from ...models import Customer, Incident, Order, Product, Ticket, utcnow
 from ...db import next_id
+from ...catalog import find_valid_substitutes
 from .base import Tool
 
 
@@ -49,25 +50,29 @@ class GetCustomer(Tool):
 
 class CheckStock(Tool):
     name = "check_stock"
-    description = ("Check current stock for a product and list up to 3 in-stock alternatives "
-                   "from the same category within ±30% of its price.")
-    input_schema = _strict({"product_id": {"type": "string"}}, ["product_id"])
+    description = ("Check current stock for a product and list up to 3 valid same-category "
+                   "alternatives within +/-30% of its price. Pass required_quantity with the "
+                   "order quantity from get_order so only alternatives with enough stock are "
+                   "returned (defaults to 1 if omitted).")
+    input_schema = _strict({
+        "product_id": {"type": "string"},
+        "required_quantity": {"type": "integer", "minimum": 1},
+    }, ["product_id"])
 
-    async def execute(self, db: Session, product_id: str) -> dict[str, Any]:
+    async def execute(self, db: Session, product_id: str,
+                      required_quantity: int = 1) -> dict[str, Any]:
         product = db.get(Product, product_id)
         if not product:
             return {"ok": False, "error": "product_not_found"}
-        lo, hi = product.price * 0.7, product.price * 1.3
-        alts = db.exec(
+        qty = max(1, int(required_quantity))
+        candidates = db.exec(
             select(Product).where(
+                Product.brand == product.brand,
                 Product.category == product.category,
                 Product.id != product.id,
-                Product.brand == product.brand,
-                Product.stock > 0,
-                Product.price >= lo,
-                Product.price <= hi,
-            ).limit(3)
+            )
         ).all()
+        alts = find_valid_substitutes(product, candidates, qty)[:3]
         return {
             "ok": True, "product_id": product.id, "stock": product.stock,
             "alternatives": [
