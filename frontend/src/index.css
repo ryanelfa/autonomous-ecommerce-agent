@@ -9,6 +9,7 @@
   --accent: #0176d3;
   --accent-strong: #032d60;
   --accent-soft: #eaf5fe;
+  --accent-rgb: 1, 118, 211;
   --text: #181818;
   --muted: #5c5c5c;
   --border: #d8dde6;
@@ -19,7 +20,6 @@
   --warning: #fe9339;
   --warning-soft: #fff4e5;
 }
-
 html,
 body,
 #root {
@@ -165,10 +165,9 @@ body {
 }
 
 .sfx-button-primary:hover {
-  background: #0b5cab;
-  border-color: #0b5cab;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
 }
-
 .sfx-pill {
   border: 1px solid var(--border);
   border-radius: 9999px;
@@ -291,14 +290,14 @@ body {
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 rgba(1, 118, 211, 0); }
-  35% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 4px rgba(1, 118, 211, 0.18); }
-  100% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 rgba(1, 118, 211, 0); }
+  0% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 rgba(var(--accent-rgb), 0); }
+  35% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 4px rgba(var(--accent-rgb), 0.18); }
+  100% { box-shadow: 0 1px 2px rgba(24, 24, 24, 0.04), 0 0 0 rgba(var(--accent-rgb), 0); }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(1, 118, 211, 0); }
-  50% { box-shadow: 0 0 0 3px rgba(1, 118, 211, 0.14); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0); }
+  50% { box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14); }
 }
 
 @keyframes spin-slow {

@@ -9,8 +9,8 @@
       "colors": {
         "background": "#F3F6FB",
         "surface": "#FFFFFF",
-        "accent": "#0176D3",
-        "accentSoft": "#EAF5FE",
+        "accent": "#B8923D",
+        "accentSoft": "#FBF4E6",
         "text": "#181818",
         "muted": "#5C5C5C",
         "danger": "#BA0517",
@@ -99,8 +99,8 @@
       "colors": {
         "background": "#F3F6FB",
         "surface": "#FFFFFF",
-        "accent": "#0B5CAB",
-        "accentSoft": "#EAF5FE",
+        "accent": "#1FA971",
+        "accentSoft": "#E7F7EF",
         "text": "#181818",
         "muted": "#5C5C5C",
         "danger": "#BA0517",
