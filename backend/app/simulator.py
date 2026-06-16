@@ -10,7 +10,8 @@ from sqlmodel import Session, select
 
 from . import config
 from .bus import agent_queue, bus, sim_running
-from .db import engine, next_id
+from .catalog import find_valid_substitutes
+from .db import active_brand, engine, next_id
 from .kpi import compute_kpis
 from .models import Customer, Incident, Order, Product, utcnow
 
@@ -66,17 +67,40 @@ def _pick_kind(rng: random.Random) -> str:
     return rng.choices(kinds, weights=weights, k=1)[0]
 
 
+def select_out_of_stock_product(products: list[Product], required_quantity: int,
+                                rng: random.Random) -> Product:
+    """Pick the product that will go out of stock.
+
+    Products are weighted by how many valid same-category substitutes they have, so
+    incidents that have a credible alternative occur more often -- but products with
+    no alternative can still be picked, keeping refund a genuine possible outcome.
+    No product is hardcoded and no substitution is ever guaranteed.
+    """
+    weights: list[float] = []
+    for product in products:
+        others = [p for p in products if p.id != product.id]
+        valid = find_valid_substitutes(product, others, required_quantity)
+        weights.append(1 + 4 * min(len(valid), 3))
+    return rng.choices(products, weights=weights, k=1)[0]
+
+
 def create_incident(kind: str, rng: random.Random | None = None) -> Incident:
     """Creates an order + incident of the given kind. Sync (called from async via to_thread or directly)."""
     rng = rng or random.Random()
     with Session(engine) as session:
-        brand_products = session.exec(select(Product).where(Product.stock >= 0)).all()
+        brand_id = active_brand()["id"]
+        brand_products = session.exec(
+            select(Product).where(Product.brand == brand_id, Product.stock > 0)
+        ).all()
         customers = session.exec(select(Customer)).all()
         if kind == "vip_complaint":
             customers = [c for c in customers if c.tier == "vip"]
         customer = rng.choice(customers)
-        product = rng.choice(brand_products)
         qty = rng.randint(1, 2)
+        if kind == "out_of_stock":
+            product = select_out_of_stock_product(brand_products, qty, rng)
+        else:
+            product = rng.choice(brand_products)
         amount = round(product.price * qty, 2)
 
         status = {"out_of_stock": "pending", "payment_failed": "pending"}.get(kind, "shipped")
