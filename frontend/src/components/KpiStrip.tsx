@@ -28,14 +28,16 @@ function useAnimatedNumber(target: number): number {
 export function KpiStrip({ kpis, savedFlash }: { kpis: Kpis; savedFlash: number }) {
   const saved = useAnimatedNumber(kpis.savedRevenue);
   return (
-    <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
+    <section className="grid grid-cols-2 gap-2 md:grid-cols-5 md:gap-3">
       <div
         key={savedFlash /* retrigger glow on each save */}
-        className="anim-glow col-span-2 rounded-xl bg-[var(--surface)] px-4 py-3 md:col-span-1"
+        className="sfx-metric-tile sfx-metric-tile-highlight anim-glow col-span-2 px-4 py-3 md:col-span-1"
         title="Substitution = 100% du montant · Bon d'achat = 50% · Information = 30% · Remboursement/Escalade = 0"
       >
-        <p className="text-xs uppercase tracking-wider text-[var(--muted)]">CA sauvé</p>
-        <p className="font-display tabular text-4xl font-bold text-[var(--accent)]">
+        <p className="text-[0.625rem] font-bold uppercase tracking-wider text-[var(--muted)]">
+          CA sauvé
+        </p>
+        <p className="font-display tabular mt-0.5 text-3xl font-bold text-[var(--accent)]">
           {saved.toLocaleString("fr-FR", { maximumFractionDigits: 0 })} €
         </p>
       </div>
@@ -49,9 +51,13 @@ export function KpiStrip({ kpis, savedFlash }: { kpis: Kpis; savedFlash: number 
 
 function Kpi({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl bg-[var(--surface)] px-4 py-3">
-      <p className="text-xs uppercase tracking-wider text-[var(--muted)]">{label}</p>
-      <p className="font-mono-data text-2xl font-medium">{value}</p>
+    <div className="sfx-metric-tile px-4 py-3">
+      <p className="text-[0.625rem] font-bold uppercase tracking-wider text-[var(--muted)]">
+        {label}
+      </p>
+      <p className="font-mono-data tabular mt-0.5 text-2xl font-semibold text-[var(--accent-strong)]">
+        {value}
+      </p>
     </div>
   );
 }

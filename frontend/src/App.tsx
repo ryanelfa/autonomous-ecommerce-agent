@@ -80,7 +80,7 @@ export default function App() {
   const [activeIncidentId, setActiveIncidentId] = useState<string | null>(null);
   const [trace, setTrace] = useState<TraceStep[]>([]);
   const [resolutions, setResolutions] = useState<Resolution[]>([]);
-  const [savedFlash, setSavedFlash] = useState(0); // increments to retrigger the gold glow
+  const [savedFlash, setSavedFlash] = useState(0); // increments to retrigger the accent glow
 
   // Bootstrap from GraphQL
   useEffect(() => {
@@ -218,14 +218,18 @@ export default function App() {
 
   if (loading || !brand || !kpis) {
     return (
-      <div className="flex h-screen items-center justify-center text-[var(--muted)]">
-        Connexion à la War Room…
+      <div className="flex h-screen flex-col items-center justify-center gap-3 text-[var(--muted)]">
+        <div
+          className="anim-spin-slow h-8 w-8 rounded-full border-2 border-[var(--border)] border-t-[var(--accent)]"
+          aria-hidden
+        />
+        <p className="text-sm font-medium text-[var(--accent-strong)]">Connexion à la War Room…</p>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto flex h-screen max-w-[1500px] flex-col gap-3 p-4">
+    <div className="mx-auto flex h-screen max-w-[1520px] flex-col gap-3 p-3 md:p-4">
       <TopBar
         brand={brand}
         brands={brandList}
@@ -235,7 +239,7 @@ export default function App() {
         onToggleSim={handleToggleSim}
       />
       <KpiStrip kpis={kpis} savedFlash={savedFlash} />
-      <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 lg:grid-cols-[1fr_1.3fr_1fr]">
+      <div className="grid min-h-0 flex-1 grid-cols-1 gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)_minmax(0,1fr)]">
         <IncidentFeed incidents={incidents} activeId={activeIncidentId} />
         <AgentTrace steps={trace} incident={activeIncident} />
         <ResolutionLog resolutions={resolutions} />

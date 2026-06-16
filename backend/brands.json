@@ -1,5 +1,5 @@
 {
-  "active": "belleza",
+  "active": "sportea",
   "brands": [
     {
       "id": "belleza",
@@ -7,28 +7,88 @@
       "tagline": "Maison de beauté",
       "voice": "Premium, chaleureux, précis. Vouvoiement. Jamais d'excès d'excuses.",
       "colors": {
-        "background": "#171120",
-        "surface": "#221A2E",
-        "accent": "#D9B36C",
-        "accentSoft": "#3A2E4A",
-        "text": "#F3EDE4",
-        "muted": "#9C92AB",
-        "danger": "#E2574C",
-        "success": "#5FB58A"
+        "background": "#F3F6FB",
+        "surface": "#FFFFFF",
+        "accent": "#0176D3",
+        "accentSoft": "#EAF5FE",
+        "text": "#181818",
+        "muted": "#5C5C5C",
+        "danger": "#BA0517",
+        "success": "#2E844A"
       },
       "products": [
-        { "name": "Sérum Éclat Nocturne 30ml", "category": "soin", "price": 89, "stock": 14 },
-        { "name": "Crème Velours Régénérante", "category": "soin", "price": 124, "stock": 9 },
-        { "name": "Eau de Parfum « Aube d'Ambre » 50ml", "category": "parfum", "price": 138, "stock": 11 },
-        { "name": "Huile Précieuse Camélia", "category": "soin", "price": 76, "stock": 16 },
-        { "name": "Palette Regard Crépuscule", "category": "maquillage", "price": 64, "stock": 12 },
-        { "name": "Rouge Signature N°7", "category": "maquillage", "price": 42, "stock": 22 },
-        { "name": "Masque Repulpant à la Rose", "category": "soin", "price": 38, "stock": 18 },
-        { "name": "Coffret Rituel Découverte", "category": "coffret", "price": 158, "stock": 6 },
-        { "name": "Brume Capillaire Soyeuse", "category": "corps", "price": 29, "stock": 25 },
-        { "name": "Fond de Teint Lumière Naturelle", "category": "maquillage", "price": 54, "stock": 15 },
-        { "name": "Gommage Corps Karité", "category": "corps", "price": 33, "stock": 20 },
-        { "name": "Bougie d'Intérieur « Fleur Blanche »", "category": "coffret", "price": 47, "stock": 13 }
+        {
+          "name": "Sérum Éclat Nocturne 30ml",
+          "category": "soin",
+          "price": 89,
+          "stock": 14
+        },
+        {
+          "name": "Crème Velours Régénérante",
+          "category": "soin",
+          "price": 124,
+          "stock": 9
+        },
+        {
+          "name": "Eau de Parfum « Aube d'Ambre » 50ml",
+          "category": "parfum",
+          "price": 138,
+          "stock": 11
+        },
+        {
+          "name": "Huile Précieuse Camélia",
+          "category": "soin",
+          "price": 76,
+          "stock": 16
+        },
+        {
+          "name": "Palette Regard Crépuscule",
+          "category": "maquillage",
+          "price": 64,
+          "stock": 12
+        },
+        {
+          "name": "Rouge Signature N°7",
+          "category": "maquillage",
+          "price": 42,
+          "stock": 22
+        },
+        {
+          "name": "Masque Repulpant à la Rose",
+          "category": "soin",
+          "price": 38,
+          "stock": 18
+        },
+        {
+          "name": "Coffret Rituel Découverte",
+          "category": "coffret",
+          "price": 158,
+          "stock": 6
+        },
+        {
+          "name": "Brume Capillaire Soyeuse",
+          "category": "corps",
+          "price": 29,
+          "stock": 25
+        },
+        {
+          "name": "Fond de Teint Lumière Naturelle",
+          "category": "maquillage",
+          "price": 54,
+          "stock": 15
+        },
+        {
+          "name": "Gommage Corps Karité",
+          "category": "corps",
+          "price": 33,
+          "stock": 20
+        },
+        {
+          "name": "Bougie d'Intérieur « Fleur Blanche »",
+          "category": "coffret",
+          "price": 47,
+          "stock": 13
+        }
       ]
     },
     {
@@ -37,28 +97,88 @@
       "tagline": "Équipement & performance",
       "voice": "Direct, énergique, efficace. Tutoiement léger.",
       "colors": {
-        "background": "#0E1B17",
-        "surface": "#16261F",
-        "accent": "#7FD14B",
-        "accentSoft": "#1F3A2C",
-        "text": "#EAF4EC",
-        "muted": "#8AA396",
-        "danger": "#E2574C",
-        "success": "#5FB58A"
+        "background": "#F3F6FB",
+        "surface": "#FFFFFF",
+        "accent": "#0B5CAB",
+        "accentSoft": "#EAF5FE",
+        "text": "#181818",
+        "muted": "#5C5C5C",
+        "danger": "#BA0517",
+        "success": "#2E844A"
       },
       "products": [
-        { "name": "Chaussures Trail GripX 42", "category": "chaussures", "price": 129, "stock": 10 },
-        { "name": "Veste Coupe-Vent Altitude", "category": "textile", "price": 89, "stock": 14 },
-        { "name": "Montre GPS Pulse S2", "category": "electronique", "price": 199, "stock": 7 },
-        { "name": "Sac d'Hydratation 12L", "category": "accessoire", "price": 54, "stock": 16 },
-        { "name": "Legging Compression Pro", "category": "textile", "price": 46, "stock": 21 },
-        { "name": "Casque Vélo AeroLite", "category": "accessoire", "price": 78, "stock": 12 },
-        { "name": "Tapis Fitness Premium", "category": "fitness", "price": 39, "stock": 24 },
-        { "name": "Haltères Réglables 2x10kg", "category": "fitness", "price": 119, "stock": 8 },
-        { "name": "Gourde Isotherme 750ml", "category": "accessoire", "price": 24, "stock": 30 },
-        { "name": "Short Running Aero", "category": "textile", "price": 32, "stock": 26 },
-        { "name": "Lampe Frontale Trail 400lm", "category": "electronique", "price": 44, "stock": 15 },
-        { "name": "Coffret Récupération Massage", "category": "fitness", "price": 84, "stock": 9 }
+        {
+          "name": "Chaussures Trail GripX 42",
+          "category": "chaussures",
+          "price": 129,
+          "stock": 10
+        },
+        {
+          "name": "Veste Coupe-Vent Altitude",
+          "category": "textile",
+          "price": 89,
+          "stock": 14
+        },
+        {
+          "name": "Montre GPS Pulse S2",
+          "category": "electronique",
+          "price": 199,
+          "stock": 7
+        },
+        {
+          "name": "Sac d'Hydratation 12L",
+          "category": "accessoire",
+          "price": 54,
+          "stock": 16
+        },
+        {
+          "name": "Legging Compression Pro",
+          "category": "textile",
+          "price": 46,
+          "stock": 21
+        },
+        {
+          "name": "Casque Vélo AeroLite",
+          "category": "accessoire",
+          "price": 78,
+          "stock": 12
+        },
+        {
+          "name": "Tapis Fitness Premium",
+          "category": "fitness",
+          "price": 39,
+          "stock": 24
+        },
+        {
+          "name": "Haltères Réglables 2x10kg",
+          "category": "fitness",
+          "price": 119,
+          "stock": 8
+        },
+        {
+          "name": "Gourde Isotherme 750ml",
+          "category": "accessoire",
+          "price": 24,
+          "stock": 30
+        },
+        {
+          "name": "Short Running Aero",
+          "category": "textile",
+          "price": 32,
+          "stock": 26
+        },
+        {
+          "name": "Lampe Frontale Trail 400lm",
+          "category": "electronique",
+          "price": 44,
+          "stock": 15
+        },
+        {
+          "name": "Coffret Récupération Massage",
+          "category": "fitness",
+          "price": 84,
+          "stock": 9
+        }
       ]
     }
   ]

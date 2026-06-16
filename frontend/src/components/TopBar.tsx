@@ -10,16 +10,24 @@ export function TopBar(props: {
 }) {
   const { brand, brands, simRunning, wsConnected, onBrandChange, onToggleSim } = props;
   return (
-    <header className="flex items-center justify-between rounded-xl bg-[var(--surface)] px-4 py-3">
+    <header className="sfx-console-header flex items-center justify-between px-4 py-2.5">
       <div className="flex items-center gap-3">
-        <span dangerouslySetInnerHTML={{ __html: brand.logoSvg }} aria-hidden />
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface-alt)] [&>svg]:h-7 [&>svg]:w-7"
+          dangerouslySetInnerHTML={{ __html: brand.logoSvg }}
+          aria-hidden
+        />
         <div>
-          <h1 className="font-display text-2xl font-semibold leading-none">{brand.name} Ops</h1>
-          <p className="text-xs text-[var(--muted)]">{brand.tagline} — Agent War Room</p>
+          <h1 className="font-display text-lg font-bold leading-tight text-[var(--accent-strong)]">
+            {brand.name} Ops
+          </h1>
+          <p className="text-xs text-[var(--muted)]">
+            {brand.tagline} — Console Agent Service
+          </p>
         </div>
         <select
           aria-label="Changer de marque"
-          className="ml-4 rounded-lg border border-[var(--accent-soft)] bg-[var(--bg)] px-2 py-1 text-sm"
+          className="sfx-select ml-2 px-2.5 py-1.5"
           value={brand.id}
           onChange={(e) => onBrandChange(e.target.value)}
         >
@@ -28,11 +36,17 @@ export function TopBar(props: {
           ))}
         </select>
       </div>
-      <div className="flex items-center gap-4 text-sm">
-        {!wsConnected && (
-          <span className="text-[var(--danger)]">⟳ reconnexion…</span>
-        )}
-        <span className="flex items-center gap-2 text-[var(--muted)]">
+      <div className="flex items-center gap-3 text-sm">
+        <span
+          className="flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--surface-alt)] px-2.5 py-1 text-xs font-medium"
+          title={wsConnected ? "WebSocket connecté" : "Reconnexion en cours"}
+        >
+          <span
+            className={`inline-block h-2 w-2 rounded-full ${wsConnected ? "bg-[var(--success)]" : "bg-[var(--warning)] anim-pulse-soft"}`}
+          />
+          {wsConnected ? "En ligne" : "Reconnexion…"}
+        </span>
+        <span className="flex items-center gap-2 text-xs text-[var(--muted)]">
           <span
             className="inline-block h-2 w-2 rounded-full"
             style={{ backgroundColor: simRunning ? "var(--success)" : "var(--muted)" }}
@@ -41,7 +55,7 @@ export function TopBar(props: {
         </span>
         <button
           onClick={onToggleSim}
-          className="rounded-lg border border-[var(--accent-soft)] px-3 py-1 hover:border-[var(--accent)]"
+          className="sfx-button px-3 py-1.5"
         >
           {simRunning ? "⏸ Pause" : "▶ Reprendre"}
         </button>
